@@ -4,7 +4,6 @@ import { useGetWeatherQuery } from './services/weather-api';
 
 function App() {
   const { data, error, isLoading } = useGetWeatherQuery('')
-  console.log("data: ", data);
   
   return (
     <div  >

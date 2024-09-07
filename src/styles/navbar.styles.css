@@ -6,9 +6,10 @@
     width: 100%;
 }
  
-#header-txt {
+#title{
     font-size: 1.3rem;
-    color: white;
-    font-weight: 600;
+    font-weight: 700;
+    text-align: left;
+    color:#FFFFFF;
 }
  

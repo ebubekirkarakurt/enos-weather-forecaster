@@ -1,0 +1,14 @@
+.header {
+    background-color: rgb(41,101,115);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+ 
+#header-txt {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+}
+ 

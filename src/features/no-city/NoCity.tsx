@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from '../../components/Navbar';
 import '../../styles/navbar.styles.css';
 import '../../styles/no.city.styles.css';
 import { ReactComponent as NoCityLogo } from '../../assets/no-city.svg';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks/hooks';
-import { RootState } from '../../redux/store/store';
+import { useAppDispatch } from '../../redux/hooks/hooks';
 import { getCityName } from '../../redux/reducer/city-name';
 
 export default function NoCity() {
@@ -18,9 +16,6 @@ export default function NoCity() {
   
   return (
     <div>
-      <nav>
-        <Navbar />
-      </nav>
       <div className='body'>
         <NoCityLogo className='no-city-logo' />
         <div className='container'>

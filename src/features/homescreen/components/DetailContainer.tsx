@@ -7,7 +7,7 @@ type Props = {
 
 export default function DetailContainer({title, description}: Props) {
   return (
-    <div>
+    <div style={{textAlign:'center'}} >
         <h1 id='header-txt'>{title}</h1>
         <p id='body-txt'>{description}</p>
     </div>

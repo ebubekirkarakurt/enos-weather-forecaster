@@ -37,7 +37,34 @@
     padding-right: 10px;
 }
 
-#description-txt {
+#description-txt{
     font-size: 1rem;
     color: #296573;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+    #temp-txt {
+        font-size: 2rem;
+    }    
+
+    #cityname-txt {
+        font-size: 1.2rem;
+
+    }
+    
+    #datetime-txt {
+        font-size: 0.8rem;
+    }
+
+    #description-txt {
+        font-size: 0.9em;
+    }
+
+    #icon {
+        width: 1.4rem;
+        padding-right: 10px;
+    }
+    
 }

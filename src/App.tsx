@@ -1,11 +1,16 @@
-import React from 'react';
-import NoCity from './features/no-city/NoCity';
-import { useGetWeatherQuery } from './services/weather-api';
 import Navbar from './components/Navbar';
-import Result from './features/search-results/Result';
+import { useAppSelector } from './redux/hooks/hooks';
+import { RootState } from './redux/store/store';
+import HomeScreen from './features/homescreen/HomeScreen';
+import { useGetWeatherQuery } from './services/weather-api';
 
 function App() {
-  const { data, error, isLoading } = useGetWeatherQuery('')
+  const cityName = useAppSelector((state: RootState) => state.city.value)
+  
+  const { data, error, isLoading } = useGetWeatherQuery(cityName)
+  //const data = null
+  //const data = {"city_name":"Raleigh","country_code":"US","data":[{"app_max_temp":23.1,"app_min_temp":14.9,"clouds":25,"clouds_hi":0,"clouds_low":14,"clouds_mid":0,"datetime":"2024-09-08","dewpt":12.2,"high_temp":24,"low_temp":12,"max_dhi":null,"max_temp":24,"min_temp":14.2,"moon_phase":0.29,"moon_phase_lunation":0.2,"moonrise_ts":1725811098,"moonset_ts":1725847576,"ozone":290,"pop":0,"precip":0,"pres":1008,"rh":66,"slp":1019,"snow":0,"snow_depth":0,"sunrise_ts":1725792680,"sunset_ts":1725838168,"temp":18.9,"ts":1725768060,"uv":8,"valid_date":"2024-09-08","vis":20.8,"weather":{"icon":"c02d","description":"Scattered clouds","code":802},"wind_cdir":"ENE","wind_cdir_full":"east-northeast","wind_dir":60,"wind_gust_spd":3,"wind_spd":1.8},{"app_max_temp":24.9,"app_min_temp":12.7,"clouds":1,"clouds_hi":0,"clouds_low":1,"clouds_mid":0,"datetime":"2024-09-09","dewpt":12,"high_temp":25.6,"low_temp":12.6,"max_dhi":null,"max_temp":25.6,"min_temp":12,"moon_phase":0.39,"moon_phase_lunation":0.23,"moonrise_ts":1725901206,"moonset_ts":1725936099,"ozone":302,"pop":0,"precip":0,"pres":1011,"rh":68,"slp":1023,"snow":0,"snow_depth":0,"sunrise_ts":1725879126,"sunset_ts":1725924480,"temp":18.7,"ts":1725854460,"uv":8,"valid_date":"2024-09-09","vis":21.5,"weather":{"icon":"c01d","description":"Clear Sky","code":800},"wind_cdir":"ENE","wind_cdir_full":"east-northeast","wind_dir":66,"wind_gust_spd":1.7,"wind_spd":1},{"app_max_temp":27.4,"app_min_temp":13.4,"clouds":3,"clouds_hi":0,"clouds_low":0,"clouds_mid":0,"datetime":"2024-09-10","dewpt":13,"high_temp":28.2,"low_temp":14.6,"max_dhi":null,"max_temp":28.2,"min_temp":12.6,"moon_phase":0.49,"moon_phase_lunation":0.27,"moonrise_ts":1725991363,"moonset_ts":1726025090,"ozone":307,"pop":0,"precip":0,"pres":1010,"rh":67,"slp":1022,"snow":0,"snow_depth":0,"sunrise_ts":1725965572,"sunset_ts":1726010792,"temp":20.1,"ts":1725940860,"uv":8,"valid_date":"2024-09-10","vis":24,"weather":{"icon":"c02d","description":"Few clouds","code":801},"wind_cdir":"SSE","wind_cdir_full":"south-southeast","wind_dir":166,"wind_gust_spd":1.5,"wind_spd":0.9},{"app_max_temp":27.5,"app_min_temp":15.5,"clouds":29,"clouds_hi":12,"clouds_low":0,"clouds_mid":0,"datetime":"2024-09-11","dewpt":14.5,"high_temp":27.9,"low_temp":16.4,"max_dhi":null,"max_temp":27.9,"min_temp":14.6,"moon_phase":0.6,"moon_phase_lunation":0.3,"moonrise_ts":1726081433,"moonset_ts":1726028239,"ozone":303,"pop":0,"precip":0,"pres":1009,"rh":71,"slp":1021,"snow":0,"snow_depth":0,"sunrise_ts":1726052018,"sunset_ts":1726097104,"temp":20.3,"ts":1726027260,"uv":6,"valid_date":"2024-09-11","vis":24,"weather":{"icon":"c02d","description":"Scattered clouds","code":802},"wind_cdir":"S","wind_cdir_full":"south","wind_dir":182,"wind_gust_spd":1.9,"wind_spd":1.1},{"app_max_temp":26.7,"app_min_temp":16.8,"clouds":59,"clouds_hi":97,"clouds_low":1,"clouds_mid":20,"datetime":"2024-09-12","dewpt":15.8,"high_temp":27.4,"low_temp":18.2,"max_dhi":null,"max_temp":27.4,"min_temp":16.2,"moon_phase":0.7,"moon_phase_lunation":0.33,"moonrise_ts":1726171248,"moonset_ts":1726118355,"ozone":300,"pop":0,"precip":0,"pres":1010,"rh":74,"slp":1022,"snow":0,"snow_depth":0,"sunrise_ts":1726138464,"sunset_ts":1726183415,"temp":20.8,"ts":1726113660,"uv":5,"valid_date":"2024-09-12","vis":24,"weather":{"icon":"c03d","description":"Broken clouds","code":803},"wind_cdir":"ENE","wind_cdir_full":"east-northeast","wind_dir":73,"wind_gust_spd":3.3,"wind_spd":1.9},{"app_max_temp":26.2,"app_min_temp":18.2,"clouds":84,"clouds_hi":89,"clouds_low":16,"clouds_mid":93,"datetime":"2024-09-13","dewpt":17.9,"high_temp":25.8,"low_temp":19.7,"max_dhi":null,"max_temp":25.8,"min_temp":18.2,"moon_phase":0.8,"moon_phase_lunation":0.37,"moonrise_ts":1726260675,"moonset_ts":1726208925,"ozone":289,"pop":10,"precip":0.25,"pres":1010,"rh":82,"slp":1022,"snow":0,"snow_depth":0,"sunrise_ts":1726224910,"sunset_ts":1726269726,"temp":21.3,"ts":1726200060,"uv":8,"valid_date":"2024-09-13","vis":24,"weather":{"icon":"c04d","description":"Overcast clouds","code":804},"wind_cdir":"ENE","wind_cdir_full":"east-northeast","wind_dir":67,"wind_gust_spd":6.8,"wind_spd":3.4},{"app_max_temp":23.2,"app_min_temp":20.2,"clouds":100,"clouds_hi":99,"clouds_low":49,"clouds_mid":100,"datetime":"2024-09-14","dewpt":19.4,"high_temp":22.6,"low_temp":19.1,"max_dhi":null,"max_temp":22.6,"min_temp":19.7,"moon_phase":0.89,"moon_phase_lunation":0.4,"moonrise_ts":1726349674,"moonset_ts":1726299757,"ozone":285,"pop":20,"precip":0.125,"pres":1010,"rh":89,"slp":1021,"snow":0,"snow_depth":0,"sunrise_ts":1726311356,"sunset_ts":1726356037,"temp":21.3,"ts":1726286460,"uv":8,"valid_date":"2024-09-14","vis":24,"weather":{"icon":"c04d","description":"Overcast clouds","code":804},"wind_cdir":"NE","wind_cdir_full":"northeast","wind_dir":53,"wind_gust_spd":7.6,"wind_spd":3.2}],"lat":"35.7721","lon":"-78.63861","state_code":"NC","timezone":"America/New_York"} 
+  console.log("DATA: ", data);
   
   return (
     <div  >
@@ -13,7 +18,7 @@ function App() {
         <Navbar />
       </nav>
       {
-        data && data.lenght === 0 ? <NoCity/> : <Result data={data} />
+        <HomeScreen data={data} />
       }
     </div>
   );

@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import '../../styles/navbar.styles.css';
-import '../../styles/no.city.styles.css';
+import '../../styles/homescren.style.css';
 import { ReactComponent as NoCityLogo } from '../../assets/no-city.svg';
 import { ReactComponent as InvalidLogo } from '../../assets/invalid-logo.svg';
+import { ReactComponent as InputIcon } from '../../assets/input-icon.svg';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks/hooks';
 import { getCityName } from '../../redux/reducer/city-name';
 import WeatherTable from './components/WeatherTable';
 import WeatherDetails from './components/WeatherDetails';
 import DetailContainer from './components/DetailContainer';
 import { RootState } from '../../redux/store/store';
-
+import { WeatherData } from '../../types/WeatherData';
 
 type Props = {
-    data: any,
+    data: WeatherData,
 }
 
 export default function HomeScreen({data}: Props) {
@@ -42,13 +43,16 @@ export default function HomeScreen({data}: Props) {
           }    
       
       <div className='container'>
-        <input 
-          name="myInput" 
-          id='input' 
-          placeholder='Search a City' 
-          onChange={handleChangeText}
-          value={city}
-        />
+        <div className='input-container'>
+          <input 
+            name="myInput" 
+            id='input' 
+            placeholder='Search a City' 
+            onChange={handleChangeText}
+            value={city}
+          />
+          <InputIcon id='input-icon'/>
+        </div>
         <div className="select-city-container">
           {
             data && cityName ? 

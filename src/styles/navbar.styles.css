@@ -1,9 +1,9 @@
 .header {
     background-color: rgb(41,101,115);
-    display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    display: flex;
 }
  
 #title{
@@ -11,5 +11,6 @@
     font-weight: 700;
     text-align: left;
     color:#FFFFFF;
+    flex: 0.7;
 }
  

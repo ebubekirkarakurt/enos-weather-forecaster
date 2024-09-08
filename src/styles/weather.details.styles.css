@@ -1,0 +1,43 @@
+.main {
+    text-align: center;
+}
+
+#temp-txt {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #296573;
+    margin: 15px;
+}
+
+#cityname-txt {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+#datetime-txt {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+#icon {
+    width: 2rem;
+    padding-right: 10px;
+}
+
+#description-txt {
+    font-size: 1rem;
+    color: #296573;
+}

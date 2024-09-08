@@ -36,7 +36,7 @@ export default function HomeScreen({data}: Props) {
             data && cityName  ? 
             <WeatherTable data={data} />
             :
-            data === null ? 
+            data === null && cityName ? 
             <InvalidLogo className='no-city-logo' /> 
             : 
             <NoCityLogo className='no-city-logo' /> 
@@ -58,7 +58,7 @@ export default function HomeScreen({data}: Props) {
             data && cityName ? 
              <WeatherDetails data={data} /> 
             :
-            data === null ? 
+            data === null && cityName ? 
             <DetailContainer title='Does not Exist' description='Type a valid city name to get weekly forecast data.' />
             :
             <DetailContainer title='Select a City' description='Search and select a city to see results. Try typing the first letters of the city you want.' />

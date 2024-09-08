@@ -15,7 +15,7 @@ function App() {
         <Navbar />
       </nav>
       {
-        <HomeScreen data={data} />
+        <HomeScreen data={data} isLoading={isLoading} />
       }
     </div>
   );

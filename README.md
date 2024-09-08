@@ -15,8 +15,10 @@ Enos Weather Forecast is a web application that provides users with a 7-day weat
 
 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/ebubekirkarakurt/enosoft-hiring-task.git 
+   
+```bash
+   git clone https://github.com/ebubekirkarakurt/enos-weather-forecaster.git
+```
 ```bash
    npm install
 ```
@@ -24,5 +26,3 @@ Enos Weather Forecast is a web application that provides users with a 7-day weat
 ```bash
    npm start
 ```
-
-
